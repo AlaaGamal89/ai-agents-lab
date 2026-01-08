@@ -1,0 +1,27 @@
+collect_specs_task:
+  description: >
+    Research the full technical specifications for {mobile_1} and {mobile_2}.
+    Focus on:
+    1. Processor and RAM
+    2. Camera system details
+    3. Battery capacity and charging speed
+    4. Screen technology and refresh rate
+    5. Current market price
+  expected_output: >
+    A comprehensive side-by-side comparison table in markdown format.
+  agent: spec_collector
+  output_file: output/specifications.md
+
+select_best_mobile_task:
+  description: >
+    Review the comparison table provided by the Specialist. 
+    Analyze which device offers the best overall package for a high-end user.
+    Consider the price-to-performance ratio.
+  expected_output: >
+    A final report stating the 'Winner'. 
+    Include a 'Pros and Cons' list for both and a 2-paragraph justification 
+    for why the winner was chosen.
+  agent: choice_selector
+  output_file: output/recommendation.md
+  context:
+    - collect_specs_task
