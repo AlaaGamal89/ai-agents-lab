@@ -1,0 +1,15 @@
+.env
+__pycache__/
+.DS_Store
+.venv/
+output/
+logs/
+*.db
+chroma_db_data/
+models/
+.venv/
+output/
+logs/
+*.db
+chroma_db_data/
+models/
